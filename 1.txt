@@ -1,0 +1,7 @@
+-- 1. Напишіть SQL-запит, який для таблиці orders з атрибута date витягує рік, місяць і число. 
+-- Виведіть на екран їх у три окремі атрибути поряд з атрибутом id та оригінальним атрибутом date (всього вийде 5 атрибутів).
+use mydb;
+describe orders;
+
+select o.id, o.date, date_format(o.date, '%Y') as year, date_format(o.date, '%m') as month, date_format(o.date, '%d') as day
+from orders o;
